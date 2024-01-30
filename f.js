@@ -13,7 +13,7 @@ function submitLoginForm() {
     };
 
     // 使用Fetch API發送POST請求到後端
-    fetch('https://line-web-app.vercel.app/back', {
+    fetch('https://line-web-app.vercel.app/d.py/back', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ function sub(){
 function sm(){
     const it=confirm('是否要送出?');
     if(it){
-        fetch('https://line-web-app.vercel.app/s', {
+        fetch('https://line-web-app.vercel.app/d.py/s', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

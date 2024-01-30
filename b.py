@@ -52,7 +52,7 @@ def handle_message(event):
           key=generate_token()
           k.append(key)
           lineweb[key]=event.source.user_id
-          req=request.post('https://line-web-app.vercel.app/sd',data={'token':key})
+          req=request.post('https://line-web-app.vercel.app/d.py/sd',data={'token':key})
           line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=key))
