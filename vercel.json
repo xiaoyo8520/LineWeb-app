@@ -1,4 +1,5 @@
 {
+  "version":2,
   "route":[
     {"src":"/b.py/(.*)","dest":"b.py"},
     {"src":"/d.py/(.*)","dest":"d.py"}
