@@ -1,0 +1,6 @@
+{
+  "route":[
+    {"src":"/b.py/(.*)","dest":"b.py"},
+    {"src":"/d.py/(.*)","dest":"d.py"}
+  ]
+}
