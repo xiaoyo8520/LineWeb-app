@@ -34,15 +34,6 @@ function submitLoginForm() {
     });
 }
 
-document.getElementById('ab').addEventListener('click', function() {
-    // 获取所有具有 data-marker="setTo87" 的输入字段
-    const inputFields = document.querySelectorAll('.score-input');
-
-    // 将这些输入字段的值设置为87
-    inputFields.forEach(function(input) {
-        input.value = '87';
-    });
-});
 function sub(){
     const page=document.body;
     page.classList.remove('loginpage');
