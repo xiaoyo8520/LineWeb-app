@@ -41,7 +41,7 @@ def s():
     try:
         data=request.get_json()
         if data == ch :
-            responee=request.post('https://line-web-app/b.py/bot',da={'ch':ch})
+            responee=request.post('https://line-web-app.vercel.app/b.py/bot',da={'ch':ch})
         return jsonify({'success': True, 'message': 'Data saved successfully'})
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)})

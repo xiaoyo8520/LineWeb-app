@@ -47,7 +47,7 @@ function sub(){
 function sm(){
     const it=confirm('是否要送出?');
     if(it){
-        fetch('https://line-web-app/d.py/s', {
+        fetch('https://line-web-app.vercel.app/d.py/s', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
