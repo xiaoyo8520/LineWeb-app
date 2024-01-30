@@ -41,38 +41,6 @@ function sub(){
     document.getElementById('out').style.display = "none";
     document.getElementById('in').style.display = "block";
 }
-document.getElementById('save').addEventListener('click',function(){
-    const inputsorce =confirm('是否要儲存?');
-    if(inputsorce){
-        alert('登入成功！');
-        sub();
-    }
-})
-
-function updateTime() {
-    var now = new Date();
-    var hours = now.getHours();
-    var minutes = now.getMinutes();
-    var seconds = now.getSeconds();
-    document.getElementById('currentTime').innerText = hours + ':' + minutes + ':' + seconds;
-}
-
-// 在页面加载时更新时间，并且每秒更新一次
-updateTime();
-setInterval(updateTime, 1000);
-
-// 显示新增项目对话框
-function showAddItemDialog() {
-    var title = prompt('请输入标题:');
-    var content = prompt('请输入内容:');
-    if (title && content) {
-        // 创建新的项目
-        var newItem = document.createElement('div');
-        newItem.innerHTML = '<strong>' + title + '</strong><br>' + content;
-        document.body.appendChild(newItem);
-    }
-}
-
 // 登出操作，这里只是简单地提示信息
 function sm(){
     const it=confirm('是否要送出?');
