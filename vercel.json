@@ -1,6 +1,9 @@
 {
   "version":2,
-  "builds":[{"src":"bd/**","use":"@vercel/python"}],
+  "builds":[
+      {"src":"bd/**","use":"@vercel/python"},
+      {"src":"pbc/**","use":"@vercel/static"}
+  ],
   "routes":[
     {"src":"/","dest":"h.html"},
     {"src":"/b.py/(.*)","dest":"bd/b.py"},
