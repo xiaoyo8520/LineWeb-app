@@ -10,6 +10,5 @@
     {"src":"/b.py/(.*)","dest":"bd/b.py"},
     {"src":"/p.py/(.*)","dest":"bd/p.py"},
     {"src":"/d.py/(.*)","dest":"bd/d.py"}
-  ],
-  "install":{"include":["in.txt"]}
+  ]
 }
