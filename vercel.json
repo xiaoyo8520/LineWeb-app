@@ -3,7 +3,7 @@
   "builds":[{"src":"p.py","use":"@vercel/python"}],
   "routes":[
     {"src":"/b.py/(.*)","dest":"b.py"},
-    {"src":"/p.py/(.*)","dest":"p.py"},
+    {"src":"/cc/(.*)","dest":"p.py"},
     {"src":"/d.py/(.*)","dest":"d.py"}
   ]
 }
