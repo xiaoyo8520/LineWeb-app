@@ -1,8 +1,9 @@
 {
   "version":2
-  "builds":[{"src":"b.py","use":"@vercel/python"}],
+  "builds":[{"src":"p.py","use":"@vercel/python"}],
   "routes":[
     {"src":"/b.py/(.*)","dest":"b.py"},
+    {"src":"/p.py/(.*)","dest":"p.py"},
     {"src":"/d.py/(.*)","dest":"d.py"}
   ]
 }
