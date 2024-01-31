@@ -1,5 +1,5 @@
 {
-  "version":2
+  "version":2,
   "builds":[{"src":"bd/**","use":"@vercel/python"}],
   "routes":[
     {"src":"/b.py/(.*)","dest":"bd/b.py"},
