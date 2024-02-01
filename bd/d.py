@@ -7,7 +7,6 @@ un='user123'
 pw='pass123'
 tk=[]
 tk.append('0')
-ch=''
 # 假設這是一個用於處理登入請求的端點
 @app.route('/back', methods=['POST'])
 def login():
@@ -20,30 +19,24 @@ def login():
     # 在實際應用中，這可能包括查詢數據庫、使用加密函數檢查密碼等
 
     # 假設通過驗證，返回成功的回應
-    
     if username == un and password == pw and captcha in tk:
-        ch=captcha
         return jsonify({'success': True, 'message': 'Login successful'})
     else:
         return jsonify({'success': False, 'message': 'Invalid credentials or captcha'})
 
 @app.route('/sd', methods=['POST'])
 def save_data():
-    try:
-        data = request.get_json()
-        tk.append(data.token)
-        return jsonify({'success': True, 'message': 'Data saved successfully'})
-    except Exception as e:
-        return jsonify({'success': False, 'message': str(e)})
+        data = request.json
+        tk.append(data['token'])
+        print('c')
+        return jsonify({'su':True})
+        
 
 @app.route('/s',methods=['POST'])
 def s():
     try:
-        data=request.get_json()
-        if data == ch :
-            responee=request.post('https://line-web-app.vercel.app/bd/b.py/bot',da={'ch':ch})
-        return jsonify({'success': True, 'message': 'Data saved successfully'})
+        
+        res=requests.post('https://line-web-app.vercel.app/bd/b.by/bot',json=tk[1])
+        return jsonify({'su':True})
     except Exception as e:
-        return jsonify({'success': False, 'message': str(e)})
-if __name__ == '__main__':
-    app.run()
+         return jsonify({'su':False})

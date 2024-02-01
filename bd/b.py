@@ -42,7 +42,7 @@ def linebot():
         }
         req = requests.request('POST', 'https://api.line.me/v2/bot/message/push', headers=headers,data=json.dumps(boday).encode('utf-8'))
     except:
-        print(reply)                                          # 如果發生錯誤，印出收到的內容
+        print(body)                                          # 如果發生錯誤，印出收到的內容
     return 'OK'                                              # 驗證 Webhook 使用，不能省略
 
 @handler.add(MessageEvent, message=TextMessage)
@@ -52,7 +52,8 @@ def handle_message(event):
           key=generate_token()
           k.append(key)
           lineweb[key]=event.source.user_id
-          req=request.post('https://line-web-app.vercel.app/bd/d.py/sd',data={'token':key})
+          data={'token':key}
+          req=requests.post('https://line-web-app.vercel.app/d.py/sd',json=data)
           line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=key))
@@ -75,22 +76,18 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,bm)
 def generate_token():
     # 生成一个随机token，可以根据需要指定token长度
-    random_token = secrets.token_hex(16)
+    random_token = secrets.token_hex(3)
     return random_token  
 @app.route('/bot',methods=['POST'])
 def ait():
-    da=request.get_data(as_text=True)
-    ta=da.ch
-    if ta in k:
+    da=request.json
+    if da in k:
         headers = {'Authorization':'Bearer 09jENteDSOLgDfu2rEoPaWHQRMfy7wmGCy0Y7TQk8K4dipgK8zHrM3EiQmLC5z7uFZ4Ajzc5BUftTqfQBrYGKYvUUo2M+UBM2VCnaxrVrdSUYkDGDLAxr+9v8ezFaZ4zbtkvbiG6hEs0W/we6FXqTwdB04t89/1O/w1cDnyilFU','Content-Type':'application/json'}
         boday = {
-            'to':lineweb[ta],
+            'to':lineweb[da],
             'messages':[{
                     'type': 'text',
                     'text': '已完成'
             }]
         }
         req = requests.request('POST', 'https://api.line.me/v2/bot/message/push', headers=headers,data=json.dumps(boday).encode('utf-8'))
-
-if __name__ == "__main__":
-    app.run()
