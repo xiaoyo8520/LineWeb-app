@@ -1,13 +1,13 @@
 {
   "version":2,
   "builds":[
-      {"src":"bd/**","use":"@vercel/python"},
+      {"src":"bd/p.py,"use":"@vercel/python"},
       {"src":"/pbc/**","use":"@vercel/static"}
   ],
   "routes":[
     {"src":"/","dest":"/pbc/h.html"},
     {"src":"/b.py/(.*)","dest":"bd/b.py"},
-    {"src":"/p.py/(.*)","dest":"bd/p.py"},
+    {"src":"/(.*)","dest":"bd/p.py"},
     {"src":"/d.py/(.*)","dest":"bd/d.py"}
   ]
 }
