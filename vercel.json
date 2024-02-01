@@ -5,7 +5,7 @@
       {"src":"/pbc/**","use":"@vercel/static"}
   ],
   "routes":[
-    {"src":"/","dest":"/pbc/h.html"},
+    
     {"src":"/b.py/(.*)","dest":"bd/b.py"},
     {"src":"/(.*)","dest":"bd/p.py"},
     {"src":"/d.py/(.*)","dest":"bd/d.py"}
