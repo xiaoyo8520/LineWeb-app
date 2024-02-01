@@ -12,7 +12,7 @@ function submitLoginForm() {
     };
     cc=data.captcha
     // 使用Fetch API發送POST請求到後端
-    fetch('http://192.168.1.117:5000/back', {
+    fetch('http://111.246.22.65:5000/back', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ function sub(){
 function sm(){
     const it=confirm('是否要送出?');
     if(it){
-        fetch('http://192.168.1.117:5000/s', {
+        fetch('http://111.246.22.65:5000/s', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
