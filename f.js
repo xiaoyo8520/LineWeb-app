@@ -1,4 +1,3 @@
-const cc='';
 function submitLoginForm() {
     // 獲取輸入值
     var username = document.getElementById('username').value;
@@ -11,9 +10,9 @@ function submitLoginForm() {
         password: password,
         captcha: captcha
     };
-
+    cc=data.captcha
     // 使用Fetch API發送POST請求到後端
-    fetch('https://line-web-app.vercel.app/bd/d.py/back', {
+    fetch('http://192.168.1.117:5000/back', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -26,7 +25,6 @@ function submitLoginForm() {
         if (result.success) {
             alert('登入成功！');  // 這裡可以改為跳轉畫面等操作
             const page=document.body;
-            cc=data.captcha;
             document.getElementById('in').style.display = "none";
             
             document.getElementById('out').style.display = "block";
@@ -47,12 +45,11 @@ function sub(){
 function sm(){
     const it=confirm('是否要送出?');
     if(it){
-        fetch('https://line-web-app.vercel.app/bd/d.py/s', {
+        fetch('http://192.168.1.117:5000/s', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(cc)
+            }
         })
         .then(response => response.json())
         .then(result => {
