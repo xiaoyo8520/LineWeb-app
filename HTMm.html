@@ -46,7 +46,7 @@
     <title>Login Page</title>
 </head>
 <body class="loginpage">
-    <div id='in'>
+    <div id='in' class='page'>
     <div  class="container">
         <h2>Login</h2>
         <form id="loginForm">
@@ -59,20 +59,47 @@
             <label for="captcha">Captcha:</label>
             <input type="text" id="captcha" required>
 
-            <button><a href=>Login</button>
+            <button><a href='#out'>Login</a></button>
         </form>
         <p id="resultMessage"></p>
     </div>
     </div>
-    <div id='out' style="display:none;">
+    <div id='out' class='page.hidden'>
         <div  class="container">
             <div class="options-container">
                 <a href="#" class="option-button" onclick="goBack()">回上一頁</a>
                 <a href="#" class="option-button" onclick="sm()">儲存選單</a>
-                <a href="#" class="option-button" onclick="logout()">登出</a>
+                <a href="#in" class="option-button" onclick="logout()">登出</a>
             </div>
         </div>
     </div>
-    <script src="f.js"></script>
+    <script src="f.js">
+     document.addEventListener('DOMContentLoaded', function() {
+      // 获取所有页面元素
+      const pages = document.querySelectorAll('.page');
+
+      // 遍历所有页面元素
+      pages.forEach(page => {
+        // 监听每个页面中的链接点击事件
+        page.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function(event) {
+            // 阻止默认链接行为
+            event.preventDefault();
+
+            // 获取目标页面的 ID
+            const targetId = this.getAttribute('href').substring(1);
+
+            // 隐藏所有页面
+            pages.forEach(page => {
+              page.classList.add('hidden');
+            });
+
+            // 显示目标页面
+            document.getElementById(targetId).classList.remove('hidden');
+          });
+        });
+      });
+    });
+ </script>
 </body>
 </html>
