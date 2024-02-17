@@ -1,6 +1,15 @@
 {
   
-  "builds":[{"src":"np.py","use":"@vercel/python"}],
-  "routes": [
-    {"src":"*/(.*)","dest":"np.py"}
-   ]
+ "version":2,
+ "builds":[
+ {
+  "src":"np.py",
+  "use":"@vercel/python"
+}
+],
+ "routes": [
+   {
+   "src":"*/(.*)",
+   "dest":"np.py"
+   }
+ ]
