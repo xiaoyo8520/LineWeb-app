@@ -1,15 +1,3 @@
 {
-  
- "version":2,
- "builds":[
- {
-  "src":"np.py",
-  "use":"@vercel/python"
+  "redirects": [{ "source": "/", "destination": "np.py" }]
 }
-],
- "routes": [
-   {
-   "src":"*/(.*)",
-   "dest":"np.py"
-   }
- ]
