@@ -1,6 +1,6 @@
 {
   "version":2,
-  
+  "builds":[{"src":"np.py","use":"@vercel/python"}]
   "routes":[{"src":"/meg","dest":"h.html"}],
   {
   "rewrites": [
