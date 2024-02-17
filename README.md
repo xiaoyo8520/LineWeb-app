@@ -72,3 +72,7 @@ id跳轉，<a> - href ,
   </script>
 </body>
 </html>
+
+
+      <p>Shopping Cart:</p>
+      <ul id="cart-items"></ul> <!-- 已加入的商品名称 -->
