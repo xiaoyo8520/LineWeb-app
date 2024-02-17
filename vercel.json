@@ -1,6 +1,7 @@
 {
   "version":2,
-  "routes":[{"src":"/meg","dest":"h.html"}]
+  
+  "routes":[{"src":"/meg","dest":"h.html"}],
   {
   "rewrites": [
     { "source": "/a/(.*)", "destination": "/np" }
