@@ -2,6 +2,6 @@
   "version":2,
   "builds":[{"src":"np.py","use":"@vercel/python"}],
   "rewrites": [
-    { "source": "/a/(.*)", "destination": "/np" }
+    { "source": "/(.*)", "destination": "np.py" }
   ]
 }
