@@ -213,10 +213,10 @@
   <!-- 购物车区域 -->
   <div class="cart-container">
     <div>
-      <button id="toggle-cart">⇩</button>
+      <button name="toggle-cart">⇩</button>
     </div>
-    <div class="cart" id="cart">
-      <p>Total Price: $<span id="total-price">0</span></p>
+    <div class="cart" name="cart">
+      <p>Total Price: $<span name="total-price">0</span></p>
       <button class="next-page-button" onclick="f('app','out')"><h2>next</h2></button>
     </div>
   </div>
@@ -265,9 +265,66 @@ function logout() {
     }
 function f(a,b){
  document.getElementById(a).style.display = "none";
-document.getElementById(a).style.display = "block";
+document.getElementById(b).style.display = "block";
 
 }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const totalPriceElement = document.getElementById('total-price');
+      const cartItemsElement = document.getElementById('cart-items');
+      const cartElement = document.getElementById('cart');
+      const toggleCartButton = document.getElementById('toggle-cart');
+      let totalPrice = 0;
+
+      toggleCartButton.addEventListener('click', function() {
+        cartElement.classList.toggle('open');
+        // 改变箭头方向
+        if (cartElement.classList.contains('open')) {
+          toggleCartButton.textContent = '⇧';
+        } else {
+          toggleCartButton.textContent = '⇩';
+        }
+      });
+
+      document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('add-to-cart')) {
+          const price = parseFloat(event.target.getAttribute('data-price'));
+          totalPrice += price;
+          totalPriceElement.textContent = totalPrice.toFixed(2);
+          event.target.textContent = 'Remove from Cart';
+          event.target.classList.remove('add-to-cart');
+          event.target.classList.add('remove-from-cart');
+          const productName = event.target.parentNode.querySelector('h3').textContent;
+          const li = document.createElement('li');
+          li.textContent = productName;
+          cartItemsElement.appendChild(li);
+          // 打开购物车
+          cartElement.classList.add('open');
+          // 修改箭头方向
+          toggleCartButton.textContent = '⇧';
+        } else if (event.target.classList.contains('remove-from-cart')) {
+          const price = parseFloat(event.target.getAttribute('data-price'));
+          totalPrice -= price;
+          totalPriceElement.textContent = totalPrice.toFixed(2);
+          event.target.textContent = 'Add to Cart';
+          event.target.classList.remove('remove-from-cart');
+          event.target.classList.add('add-to-cart');
+          const productName = event.target.parentNode.querySelector('h3').textContent;
+          const cartItems = cartItemsElement.querySelectorAll('li');
+          cartItems.forEach(item => {
+            if (item.textContent === productName) {
+              cartItemsElement.removeChild(item);
+            }
+          });
+          // 如果购物车为空，则关闭购物车
+          if (cartItemsElement.childElementCount === 0) {
+            cartElement.classList.remove('open');
+            // 修改箭头方向
+            toggleCartButton.textContent = '⇩';
+          }
+        }
+      });
+    });
     </script>
 </body>
 </html>
