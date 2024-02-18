@@ -24,7 +24,7 @@ function initializeLiff(myLiffId) {
 });
 
 initializeLiff('2003304114-bdgVMe9K');
-function submitLoginForm() {
+function slm() {
     // 獲取輸入值
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
