@@ -16,8 +16,7 @@ function submitLoginForm() {
             document.getElementById('out').style.display = "block";
         } else {
             alert('登入失敗，請檢查帳號、密碼和驗證碼。');
-        }
-    });
+       }
 }
 
 function sub(){
