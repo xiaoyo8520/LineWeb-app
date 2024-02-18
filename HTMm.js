@@ -23,7 +23,7 @@ function initializeLiff(myLiffId) {
             console.log('初始化失敗') 
 });
 
-initializeLiff('2003304114-bdgVMe9K')
+initializeLiff('2003304114-bdgVMe9K');
 function submitLoginForm() {
     // 獲取輸入值
     var username = document.getElementById('username').value;
