@@ -10,21 +10,12 @@ function submitLoginForm() {
         password: password,
         captcha: captcha
     };
-    // 使用Fetch API發送POST請求到後端
-    fetch('https://ffcc-111-246-5-178.ngrok-free.app/back', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(result => {
-        // 根據後端回應處理前端行為
-        if (result.success) {
+     if (1) {
             alert('登入成功！');  // 這裡可以改為跳轉畫面等操作
             const page=document.body;
-            document.getElementById('in').style.display = "none";            document.getElementById('app').style.display = "block";
+            document.getElementById('in').style.display = "none";
+            
+            document.getElementById('out').style.display = "block";
         } else {
             alert('登入失敗，請檢查帳號、密碼和驗證碼。');
         }
