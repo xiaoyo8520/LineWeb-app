@@ -2,13 +2,11 @@ function submitLoginForm() {
     // 獲取輸入值
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    var captcha = document.getElementById('captcha').value;
 
     // 構建要發送的資料
     var data = {
         username: username,
-        password: password,
-        captcha: captcha
+        password: password
     };
      if (1) {
             alert('登入成功！');  // 這裡可以改為跳轉畫面等操作
