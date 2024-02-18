@@ -27,6 +27,12 @@ function sub(){
     document.getElementById('in').style.display = "block";
 }
 // 登出操作，这里只是简单地提示信息
+function goback(){
+    const it=confirm('是否要送出?');
+    if(it){
+        
+    }
+}    
 function sm(){
     const it=confirm('是否要送出?');
     if(it){
