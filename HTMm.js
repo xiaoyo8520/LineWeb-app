@@ -19,7 +19,7 @@ function initializeLiff(myLiffId) {
                });
                } 
             } 
-            }).catch((err) => { 
+            ).catch((err) => { 
             console.log('初始化失敗') 
 });
 
