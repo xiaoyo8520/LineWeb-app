@@ -21,7 +21,7 @@ function initializeLiff(myLiffId) {
             } 
             ).catch((err) => { 
             console.log('初始化失敗') 
-});
+})};
 
 initializeLiff('2003304114-bdgVMe9K');
 function slm() {
