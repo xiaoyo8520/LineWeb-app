@@ -56,9 +56,9 @@ function sub(){
 function goback(){
     const it=confirm('是否要送出?');
     if(it){
-                var data={uid : userId}
+                var dat={uid : userId}
                 fetch('https://b03b-114-33-4-188.ngrok-free.app/back', {
-                body: JSON.stringify(data),
+                body: JSON.stringify(dat),
                 cache: 'no-cache',
                 headers: {
                     'user-agent': 'Mozilla/4.0 MDN Example',
