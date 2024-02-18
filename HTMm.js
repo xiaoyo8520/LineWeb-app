@@ -1,3 +1,29 @@
+let userId = null;
+function initializeLiff(myLiffId) {
+            liff.init({ 
+                　liffId: myLiffId
+            }) .then(() => { 
+             if (!liff.isLoggedIn()) { 
+               alert("使用者未登入"); 
+               liff.login(); 
+              } else { 
+               alert("使用者已登入"); 
+               liff.getProfile() 
+               .then(profile => { 
+                const name = profile.displayName 
+                userId = profile.userId;
+                
+               }) 
+               .catch((err) => { 
+                console.log('error', err) ; 
+               });
+               } 
+            } 
+            }).catch((err) => { 
+            console.log('初始化失敗') 
+});
+
+initializeLiff('2003304114-bdgVMe9K')
 function submitLoginForm() {
     // 獲取輸入值
     var username = document.getElementById('username').value;
@@ -30,23 +56,36 @@ function sub(){
 function goback(){
     const it=confirm('是否要送出?');
     if(it){
-        
+                var data={uid : userId}
+                fetch('https://b03b-114-33-4-188.ngrok-free.app/back', {
+                body: JSON.stringify(data),
+                cache: 'no-cache',
+                headers: {
+                    'user-agent': 'Mozilla/4.0 MDN Example',
+                    'content-type': 'application/json'
+                },
+                method: 'POST',
+                mode: 'cors',
+                })
+                .then(response => response.json()) // 輸出成 json
+                
     }
 }    
 function sm(){
     const it=confirm('是否要送出?');
     if(it){
-        fetch('https://ffcc-111-246-5-178.ngrok-free.app/s', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(result => {
-            // 根據後端回應處理前端行為
-            if (result.success) alert('送出成功！');
-        });
+            liff.sendMessages([
+      {
+            type: 'text',
+            text: '已完成'
+      }
+    ])
+      .then(() => {
+        console.log('message sent');
+      })
+      .catch((err) => {
+        console.log('error', err);
+      });
     }
 }
 function logout() {
