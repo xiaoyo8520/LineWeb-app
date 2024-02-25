@@ -10,9 +10,9 @@ function initializeLiff(myLiffId) {
                alert("使用者已登入"); 
                liff.getProfile() 
                .then(profile => { 
-                const name = profile.displayName 
+                const name = profile.displayName ;
                 userId = profile.userId;
-                
+                console.log('userId);
                }) 
                .catch((err) => { 
                 console.log('error', err) ; 
