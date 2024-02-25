@@ -11,7 +11,8 @@ function initializeLiff(myLiffId) {
                liff.getProfile() 
                .then(profile => { 
                 const name = profile.displayName 
-                userId = profile.userId;
+                userId = profile.userId
+                console.log(userId);        
                }) 
                .catch((err) => { 
                 console.log('error', err) ; 
