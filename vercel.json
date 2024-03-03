@@ -1,7 +1,7 @@
 {
   "version":2,
   "builds":[{
-        "src":"np.py",
+        "src":"notify.py",
         "use":"@vercel/python"
   }]
 }
