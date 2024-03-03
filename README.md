@@ -8,13 +8,9 @@
 <body>
   <div class="container">
     <div id="page1" class="page">
-      
-    <h1>LIFF:</h1>
-    <h2>HTMm.html , HTMm.js , e.css , g.css</h2>
-
-
-    <h2>---------</h2>
-
+      <h1>LIFF:</h1>
+      <h2>HTMm.html , HTMm.js , e.css , g.css</h2>
+      <h2>---------</h2>
       <h1>Welcome to Page 1</h1>
       <p>This is Page 1 content.</p>
       <a href="#page2">Go to Page 2</a>
