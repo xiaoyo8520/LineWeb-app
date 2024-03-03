@@ -1,32 +1,20 @@
 
 
-html方法:  
-id跳轉，<a> - href ,
-#href :
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Control Page Redirect with ID</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .hidden {
-      display: none;
-    }
-  </style>
-</head>
 <body>
   <div class="container">
     <div id="page1" class="page">
+      
+    <h1>LIFF:</h1>
+    <h2>HTMm.html , HTMm.js , e.css , g.css</h2>
+
+
+    <h2>---------</h2>
+
       <h1>Welcome to Page 1</h1>
       <p>This is Page 1 content.</p>
       <a href="#page2">Go to Page 2</a>
@@ -40,6 +28,9 @@ id跳轉，<a> - href ,
     <div id="page3" class="page hidden">
       <h1>Welcome to Page 3</h1>
       <p>This is Page 3 content.</p>
+      html方法:  
+      id跳轉，<a> - href ,
+      #href :
       <a href="#page1">Go to Page 1</a>
     </div>
   </div>
