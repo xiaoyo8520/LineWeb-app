@@ -1,26 +1,31 @@
 import requests
-from flask import Flask, request
+from flask import Flask, request,render_template
 
 app = Flask(__name__)
-@app.route('/', methods=['POST', 'GET'])
+
+uri='https://10fb-114-33-4-188.ngrok-free.app' #callback網址
+
+#訪問網址'https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=9BhYhKzGtasty5jOlfsPGK&redirect_uri=&scope=notify&state=NO_STATE'
+
+@app.route('/', methods=['POST', 'GET']) #連接端點，訪問notify網址連動時會轉到這
 def hello_world():
     authorizeCode = request.args.get('code')
     token = getNotifyToken(authorizeCode)
     print(token)
-    lineNotifyMessage(token, "恭喜你連動")
-    return "aaaa"
+    lineNotifyMessage(token, "連動完成!")
+    return render_template('h.html')
 
-@app.route('/ac/<name>/<msg>',methods=['POST','GET'])
+@app.route('/ac/<name>/<msg>',methods=['POST','GET'])#提醒通知端，name為token，msg是訊息，再丟入發訊息函式
 def hello_wor(name,msg):
     token=f'{name}'
     lineNotifyMessage(token, f'{msg}')
-    return f'acbc'
+    
 
 def getNotifyToken(AuthorizeCode): #運用網址'code'參數和相關資訊，生成oauth_token
     body = {
         "grant_type": "authorization_code",
         "code": AuthorizeCode,
-        "redirect_uri": 'https://line-web-app.vercel.app/np.py',
+        "redirect_uri": uri,
         "client_id": '9BhYhKzGtasty5jOlfsPGK',
         "client_secret": 'j0KmCm6UHc14lyD0qQeQqf3NTER2K2p8vFpIsjlJRD5'
     }
