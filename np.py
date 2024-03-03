@@ -14,7 +14,7 @@ def hello_world():
 def hello_wor(name,msg):
     token=f'{name}'
     lineNotifyMessage(token, f'{msg}')
-    return "abcc"
+    return f'acbc'
 
 def getNotifyToken(AuthorizeCode): #運用網址'code'參數和相關資訊，生成oauth_token
     body = {
