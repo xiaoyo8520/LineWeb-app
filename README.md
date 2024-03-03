@@ -1,9 +1,9 @@
 
-<h1>LIFF</h1> : 
-HTMm.html , HTMm.js , e.css , g.css
+<h1>LIFF:</h1>
+<h2>HTMm.html , HTMm.js , e.css , g.css</h2>
 
 
-
+<h2>---------</h2>
 
 html方法:  
 id跳轉，<a> - href ,
