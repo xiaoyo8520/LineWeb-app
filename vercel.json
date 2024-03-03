@@ -3,6 +3,5 @@
   "builds":[{
         "src":"np.py",
         "use":"@vercel/python"
-  }],
-  "routes":[{"src":"/np/(.*)","dest":"np.py"}]
+  }]
 }
