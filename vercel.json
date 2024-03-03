@@ -1,4 +1,8 @@
 {
   "version":2,
-  "redirects": [{ "source": "/", "destination": "/np" }]
+  "builds":{
+        "src":"np.py",
+        "use":"@vercel/python"
+  }
+  "routes":{"src":"/np/(.*)","dest":"np.py"}
 }
